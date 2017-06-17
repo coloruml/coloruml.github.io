@@ -1,0 +1,6 @@
+A.methodA() {
+    B.methodB() {
+        C.methodC()
+    }
+    methodA1()
+}
