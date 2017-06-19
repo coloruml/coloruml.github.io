@@ -1,3 +1,11 @@
+`cp -R ../../jdl-studio/dist ./`
+
+`cp ../../jdl-studio/index.html .`
+
+`jekyll build`
+
+`jekyll serve --baseurl=''`
+
 Jekyll Clean
 ============
 

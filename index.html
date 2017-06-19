@@ -14,7 +14,12 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#282C34">
 	<title>Color UML - Simple Sequence Diagram</title>
 
-	<link rel="stylesheet" href="dist/css/main-321fee5178.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="dist/css/main-38dec32d77.css">
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body ng-app="jdlStudio" ng-controller="workspaceController as app">
@@ -24,47 +29,71 @@
 				<a href="https://jhipster.github.io" title="JHipster website" target="_blank"><img class="jhi-logo" src="img/logo-jhipster.png"></a>
 				<a class="logo" href="javascript:void(0)" ng-click="app.toggleSidebar('about')" title="About JDL-Studio"><h1>Seq Studio</h1> &nbsp;</a>
 			</div>
-			<div class="tools right">
-				<a href="javascript:void(0)" ng-click="app.toggleSidebar('about')" title="About JDL-Studio">
-					<i class="lnr lnr-question-circle"></i>
-				</a>
-				<a href="javascript:void(0)" ng-click="app.toggleSidebar('reference')" title="Language reference">
-					<i class="lnr lnr-book"></i>
-				</a>
-				<a id="savebutton" href="javascript:void(0)" download="jdl.png" title="Download snapshot of this diagram">
-					<i class="lnr lnr-camera"></i>
-				</a>
-				<a id="saveTextbutton" href="javascript:void(0)" download="jdl.jh" title="Download text file of this JDL">
-					<i class="lnr lnr-download"></i>
-				</a>
-				<a id="uploadbutton" class="upload-dialog" href="#upload-dialog" title="Import text file of a JDL">
-					<i class="lnr lnr-upload"></i>
-				</a>
-				<a id="linkbutton" href="javascript:void(0)" target="_blank" title="Shareable link to this diagram">
-					<i class="lnr lnr-link"></i>
-				</a>
-				<a href="javascript:void(0)" ng-click="app.confirmDiscardCurrentGraph()" title="Discard this diagram">
-					<i class="lnr lnr-trash"></i>
-				</a>
-				<span id="tooltip"></span>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.name }}</a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
+								<li class="active visible-xs-block"><a href="{{ site.baseurl }}/links.html">Links</a></li>
+								<li class="active"><a href="{{ site.baseurl }}/archive.html">Archive</a></li>
+								<li class="active"><a href="{{ site.baseurl }}/about.html">About</a></li>
+								<li class="active"><a href="{{ site.baseurl }}/feed.xml">RSS</a></li>
+							</ul>
+						</div>
+            <div class="tools right">
+              <a href="javascript:void(0)" ng-click="app.toggleSidebar('about')" title="About JDL-Studio">
+                <i class="lnr lnr-question-circle"></i>
+              </a>
+              <a href="javascript:void(0)" ng-click="app.toggleSidebar('reference')" title="Language reference">
+                <i class="lnr lnr-book"></i>
+              </a>
+              <a id="savebutton" href="javascript:void(0)" download="jdl.png" title="Download snapshot of this diagram">
+                <i class="lnr lnr-camera"></i>
+              </a>
+              <a id="saveTextbutton" href="javascript:void(0)" download="jdl.jh" title="Download text file of this JDL">
+                <i class="lnr lnr-download"></i>
+              </a>
+              <a id="uploadbutton" class="upload-dialog" href="#upload-dialog" title="Import text file of a JDL">
+                <i class="lnr lnr-upload"></i>
+              </a>
+              <a id="linkbutton" href="javascript:void(0)" target="_blank" title="Shareable link to this diagram">
+                <i class="lnr lnr-link"></i>
+              </a>
+              <a href="javascript:void(0)" ng-click="app.confirmDiscardCurrentGraph()" title="Discard this diagram">
+                <i class="lnr lnr-trash"></i>
+              </a>
+              <span id="tooltip"></span>
 				<span id="storage-status" ng-show="app.showStorageStatus" ng-cloak>
 					View mode, changes are not saved.
 					<a href="javascript:void(0)" ng-click="app.saveViewModeToStorage()"
-					   title="Save this diagram to localStorage">save</a>
+             title="Save this diagram to localStorage">save</a>
 					<a href="javascript:void(0)" ng-click="app.exitViewMode()"
-					   title="Discard this diagram">close</a>
+             title="Discard this diagram">close</a>
 				</span>
 
-				<div class="canvas-tools" id="canvas-tools">
-					<a href="javascript:void(0)" ng-click="app.magnifyViewport(2)" title="Zoom in">
-						<i class="lnr lnr-plus-circle"></i>
-					</a>
-					<a href="javascript:void(0)" ng-click="app.resetViewport()" title="Reset zoom and panning">
-						<i class="lnr lnr-frame-contract"></i>
-					</a>
-					<a href="javascript:void(0)" ng-click="app.magnifyViewport(-2)" title="Zoom out">
-						<i class="lnr lnr-circle-minus"></i>
-					</a>
+              <div class="canvas-tools" id="canvas-tools">
+                <a href="javascript:void(0)" ng-click="app.magnifyViewport(2)" title="Zoom in">
+                  <i class="lnr lnr-plus-circle"></i>
+                </a>
+                <a href="javascript:void(0)" ng-click="app.resetViewport()" title="Reset zoom and panning">
+                  <i class="lnr lnr-frame-contract"></i>
+                </a>
+                <a href="javascript:void(0)" ng-click="app.magnifyViewport(-2)" title="Zoom out">
+                  <i class="lnr lnr-circle-minus"></i>
+                </a>
+              </div>
+            </div>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -107,14 +136,14 @@
 	// temp hack to use jdl parser from jhipster-core
 	var module = module || {};
 	</script>
-	<script src="dist/js/main-4912563099.js"></script>
+	<script src="dist/js/main-df5b90e566.js"></script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-1211588-19', 'auto');
+		ga('create', 'UA-1211588-18', 'auto');
 		ga('send', 'pageview');
 
 	</script>
